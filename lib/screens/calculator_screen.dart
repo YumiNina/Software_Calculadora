@@ -28,22 +28,22 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 CalculatorButton(
                   text: 'AC',
-                  bgColor: Color(0xffA5A5A5),
+                  bgColor: Color.fromARGB(255, 67, 184, 231),
                   onPressed: () => CalculatorBloc.add(ResetAC()),
                 ),
                 CalculatorButton(
                   text: '+/-',
-                  bgColor: Color(0xffA5A5A5),
+                  bgColor: Color.fromARGB(255, 67, 184, 231),
                   onPressed: () => print('+/-'),
                 ),
                 CalculatorButton(
                   text: 'del',
-                  bgColor: Color(0xffA5A5A5),
+                  bgColor: Color.fromARGB(255, 67, 184, 231),
                   onPressed: () => print('del'),
                 ),
                 CalculatorButton(
                   text: '/',
-                  bgColor: Color(0xffF0A23B),
+                  bgColor: Color.fromARGB(255, 244, 81, 189),
                   onPressed: () => print('/'),
                 ),
               ],
@@ -53,19 +53,19 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 CalculatorButton(
                   text: '7',
-                  onPressed: () => print('7'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('7')),
                 ),
                 CalculatorButton(
                   text: '8',
-                  onPressed: () => print('8'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('8')),
                 ),
                 CalculatorButton(
                   text: '9',
-                  onPressed: () => print('9'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('9')),
                 ),
                 CalculatorButton(
                   text: 'X',
-                  bgColor: Color(0xffF0A23B),
+                  bgColor: Color.fromARGB(255, 244, 81, 189),
                   onPressed: () => print('X'),
                 ),
               ],
@@ -75,19 +75,19 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 CalculatorButton(
                   text: '4',
-                  onPressed: () => print('4'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('4')),
                 ),
                 CalculatorButton(
                   text: '5',
-                  onPressed: () => print('5'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('5')),
                 ),
                 CalculatorButton(
                   text: '6',
-                  onPressed: () => print('6'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('6')),
                 ),
                 CalculatorButton(
                   text: '-',
-                  bgColor: Color(0xffF0A23B),
+                  bgColor: Color.fromARGB(255, 244, 81, 189),
                   onPressed: () => print('-'),
                 ),
               ],
@@ -97,19 +97,19 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 CalculatorButton(
                   text: '1',
-                  onPressed: () => print('1'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('1')),
                 ),
                 CalculatorButton(
                   text: '2',
-                  onPressed: () => print('2'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('2')),
                 ),
                 CalculatorButton(
                   text: '3',
-                  onPressed: () => print('3'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('3')),
                 ),
                 CalculatorButton(
                   text: '+',
-                  bgColor: Color(0xffF0A23B),
+                  bgColor: Color.fromARGB(255, 244, 81, 189),
                   onPressed: () => print('+'),
                 ),
               ],
@@ -128,7 +128,7 @@ class CalculatorScreen extends StatelessWidget {
                 ),
                 CalculatorButton(
                   text: '=',
-                  bgColor: Color(0xffF0A23B),
+                  bgColor: Color.fromARGB(255, 218, 39, 39),
                   onPressed: () => print('='),
                 ),
               ],

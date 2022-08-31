@@ -13,6 +13,15 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
       if (event is ResetAC) {
         yield CalculatorState(
             oneNumber: '0', mathResult: '0', twoNumber: '0', operation: 'none');
+      } else if (event is AddNumber) {
+        yield CalculatorState(
+          oneNumber: '0',
+          twoNumber: '0',
+          operation: 'none',
+          mathResult: (state.mathResult == '0')
+              ? event.number
+              : state.mathResult + event.number,
+        );
       }
     }
   }
