@@ -10,3 +10,7 @@ class AddNumber extends CalculatorEvent {
   final String number;
   AddNumber(this.number);
 }
+
+class ChangeNegativePositive extends CalculatorEvent {}
+
+class DelateLastEntry extends CalculatorEvent {}
