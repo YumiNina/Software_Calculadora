@@ -5,9 +5,12 @@ part 'calculator_event.dart';
 part 'calculator_state.dart';
 
 class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
-  CalculatorBloc() : super(CalculatorInitial()) {
-    on<CalculatorEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+  CalculatorBloc() : super(CalculatorState()) {
+    @override
+    Stream<CalculatorState> mapEventToState(
+      CalculatorEvent event,
+    ) async* {
+      if (event is ResetAC) {}
+    }
   }
 }
