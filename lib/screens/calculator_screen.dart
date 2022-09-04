@@ -1,19 +1,14 @@
-import 'package:calculadora/bloc/calculator_bloc.dart';
-import 'package:calculadora/bloc/calculator_bloc.dart';
-import 'package:calculadora/bloc/calculator_bloc.dart';
-
+import 'package:calculadora/bloc/calculator/calculator_bloc.dart';
 import 'package:calculadora/widgets/results_labels.dart';
 import 'package:flutter/material.dart';
 import 'package:calculadora/widgets/calc_button.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../bloc/calculator_bloc.dart';
+import '../bloc/calculator/calculator_bloc.dart';
 
 class CalculatorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final CalculatorBloc = BlocProvider.of<CalculatorBloc>(context);
-
+    final calculatorBloc = BlocProvider.of<CalculatorBloc>(context);
     return Scaffold(
         body: SafeArea(
       child: Container(
@@ -30,17 +25,17 @@ class CalculatorScreen extends StatelessWidget {
                 CalculatorButton(
                   text: 'AC',
                   bgColor: Color.fromARGB(255, 67, 184, 231),
-                  onPressed: () => CalculatorBloc.add(ResetAC()),
+                  onPressed: () => calculatorBloc.add(ResetAC()),
                 ),
                 CalculatorButton(
                   text: '+/-',
                   bgColor: Color.fromARGB(255, 67, 184, 231),
-                  onPressed: () => print('+/-'),
+                  onPressed: () => calculatorBloc.add(ChangeNegativePositive()),
                 ),
                 CalculatorButton(
                   text: 'del',
                   bgColor: Color.fromARGB(255, 67, 184, 231),
-                  onPressed: () => print('del'),
+                  onPressed: () => calculatorBloc.add(DelateLastEntry()),
                 ),
                 CalculatorButton(
                   text: '/',
@@ -54,15 +49,15 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 CalculatorButton(
                   text: '7',
-                  onPressed: () => CalculatorBloc.add(AddNumber('7')),
+                  onPressed: () => calculatorBloc.add(AddNumber('7')),
                 ),
                 CalculatorButton(
                   text: '8',
-                  onPressed: () => CalculatorBloc.add(AddNumber('8')),
+                  onPressed: () => calculatorBloc.add(AddNumber('8')),
                 ),
                 CalculatorButton(
                   text: '9',
-                  onPressed: () => CalculatorBloc.add(AddNumber('9')),
+                  onPressed: () => calculatorBloc.add(AddNumber('9')),
                 ),
                 CalculatorButton(
                   text: 'X',
@@ -76,15 +71,15 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 CalculatorButton(
                   text: '4',
-                  onPressed: () => CalculatorBloc.add(AddNumber('4')),
+                  onPressed: () => calculatorBloc.add(AddNumber('4')),
                 ),
                 CalculatorButton(
                   text: '5',
-                  onPressed: () => CalculatorBloc.add(AddNumber('5')),
+                  onPressed: () => calculatorBloc.add(AddNumber('5')),
                 ),
                 CalculatorButton(
                   text: '6',
-                  onPressed: () => CalculatorBloc.add(AddNumber('6')),
+                  onPressed: () => calculatorBloc.add(AddNumber('6')),
                 ),
                 CalculatorButton(
                   text: '-',
@@ -98,15 +93,15 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 CalculatorButton(
                   text: '1',
-                  onPressed: () => CalculatorBloc.add(AddNumber('1')),
+                  onPressed: () => calculatorBloc.add(AddNumber('1')),
                 ),
                 CalculatorButton(
                   text: '2',
-                  onPressed: () => CalculatorBloc.add(AddNumber('2')),
+                  onPressed: () => calculatorBloc.add(AddNumber('2')),
                 ),
                 CalculatorButton(
                   text: '3',
-                  onPressed: () => CalculatorBloc.add(AddNumber('3')),
+                  onPressed: () => calculatorBloc.add(AddNumber('3')),
                 ),
                 CalculatorButton(
                   text: '+',
@@ -139,4 +134,6 @@ class CalculatorScreen extends StatelessWidget {
       ),
     ));
   }
+
+  BuildContext calculatorbloc(BuildContext context) => context;
 }

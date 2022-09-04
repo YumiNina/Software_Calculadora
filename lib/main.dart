@@ -1,4 +1,4 @@
-import 'package:calculadora/bloc/calculator_bloc.dart';
+import 'package:calculadora/bloc/calculator/calculator_bloc.dart';
 import 'package:calculadora/screens/calculator_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
