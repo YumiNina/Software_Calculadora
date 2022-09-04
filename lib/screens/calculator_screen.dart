@@ -106,7 +106,7 @@ class CalculatorScreen extends StatelessWidget {
                 CalculatorButton(
                   text: '+',
                   bgColor: Color.fromARGB(255, 244, 81, 189),
-                  onPressed: () => print('+'),
+                  onPressed: () => calculatorBloc.add((OperationEntry('+')),
                 ),
               ],
             ),
@@ -116,7 +116,7 @@ class CalculatorScreen extends StatelessWidget {
                 CalculatorButton(
                   text: '0',
                   big: true,
-                  onPressed: () => print('0'),
+                  onPressed: () => calculatorBloc.add(AddNumber('0')),
                 ),
                 CalculatorButton(
                   text: '.',

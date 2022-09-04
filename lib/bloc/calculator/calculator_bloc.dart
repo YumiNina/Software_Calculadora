@@ -30,11 +30,19 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
           mathResult: state.mathResult.length > 1
               ? state.mathResult.substring(0, state.mathResult.length - 1)
               : '0');
+      //agregamos la operacion
+
+    } else if (event is OperationEntry) {
+      yield state.copyWith(
+          oneNumber: state.mathResult,
+          mathResult: '0',
+          operation: event.operation,
+          twoNumber: '0');
     }
   }
 
   Stream<CalculatorState> _resetAC() async* {
     yield CalculatorState(
-        oneNumber: '0', mathResult: '0', twoNumber: '0', operation: 'none');
+        oneNumber: '0', mathResult: '0', twoNumber: '0', operation: ' ');
   }
 }
