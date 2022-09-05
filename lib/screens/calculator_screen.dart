@@ -40,7 +40,7 @@ class CalculatorScreen extends StatelessWidget {
                 CalculatorButton(
                   text: '/',
                   bgColor: Color.fromARGB(255, 244, 81, 189),
-                  onPressed: () => print('/'),
+                  onPressed: () => calculatorBloc.add(OperationEntry('/')),
                 ),
               ],
             ),
@@ -62,7 +62,7 @@ class CalculatorScreen extends StatelessWidget {
                 CalculatorButton(
                   text: 'X',
                   bgColor: Color.fromARGB(255, 244, 81, 189),
-                  onPressed: () => calculatorBloc.add(OperationEntry('-')),
+                  onPressed: () => calculatorBloc.add(OperationEntry('X')),
                 ),
               ],
             ),
