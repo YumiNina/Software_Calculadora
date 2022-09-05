@@ -8,10 +8,10 @@ class CalculatorState {
   final String operation;
 
   CalculatorState({
-    this.mathResult = '30',
-    this.oneNumber = '10',
-    this.twoNumber = '20',
-    this.operation = '+',
+    this.mathResult = '0',
+    this.oneNumber = '0',
+    this.twoNumber = '0',
+    this.operation = ' ',
   });
   CalculatorState copyWith({
     String? mathResult,

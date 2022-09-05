@@ -20,3 +20,5 @@ class OperationEntry extends CalculatorEvent {
 
   OperationEntry(this.operation);
 }
+
+class CalculateResult extends CalculatorEvent {}

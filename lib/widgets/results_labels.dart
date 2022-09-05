@@ -12,13 +12,25 @@ class ResultsLabels extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CalculatorBloc, CalculatorState>(
       builder: (context, state) {
+        if (state.oneNumber == '0' && state.twoNumber == '0') {
+          return MainResultText(
+              text: state.mathResult.endsWith('.0')
+                  ? state.mathResult.substring(0, state.mathResult.length - 2)
+                  : state.mathResult);
+        }
         return Column(
           children: [
             SubResult(text: state.oneNumber),
             SubResult(text: state.operation),
-            SubResult(text: state.twoNumber),
+            SubResult(
+                text: state.twoNumber.endsWith('.0')
+                    ? state.twoNumber.substring(0, state.twoNumber.length - 2)
+                    : state.twoNumber),
             LineSeparator(),
-            MainResultText(text: state.mathResult),
+            MainResultText(
+                text: state.mathResult.endsWith('.0')
+                    ? state.mathResult.substring(0, state.mathResult.length - 2)
+                    : state.mathResult),
           ],
         );
       },

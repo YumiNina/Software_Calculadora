@@ -119,13 +119,12 @@ class CalculatorScreen extends StatelessWidget {
                   onPressed: () => calculatorBloc.add(AddNumber('0')),
                 ),
                 CalculatorButton(
-                  text: '.',
-                  onPressed: () => print('.'),
-                ),
+                    text: '.',
+                    onPressed: () => calculatorBloc.add(AddNumber('.'))),
                 CalculatorButton(
                   text: '=',
                   bgColor: Color.fromARGB(255, 218, 39, 39),
-                  onPressed: () => print('='),
+                  onPressed: () => calculatorBloc.add(CalculateResult()),
                 ),
               ],
             ),

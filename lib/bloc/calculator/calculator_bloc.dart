@@ -38,11 +38,41 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
           mathResult: '0',
           operation: event.operation,
           twoNumber: '0');
+    } else if (event is CalculateResult) {
+      //calculamos el resultado
+
+      yield* _calculateResult();
     }
   }
 
   Stream<CalculatorState> _resetAC() async* {
     yield CalculatorState(
         oneNumber: '0', mathResult: '0', twoNumber: '0', operation: ' ');
+  }
+
+  Stream<CalculatorState> _calculateResult() async* {
+    final double num1 = double.parse(state.oneNumber);
+    final double num2 = double.parse(state.mathResult);
+    switch (state.operation) {
+      case '+':
+        yield state.copyWith(
+            twoNumber: state.mathResult, mathResult: '${num1 + num2}');
+        break;
+      case '-':
+        yield state.copyWith(
+            twoNumber: state.mathResult, mathResult: '${num1 - num2}');
+        break;
+      case '/':
+        yield state.copyWith(
+            twoNumber: state.mathResult, mathResult: '${num1 / num2}');
+        break;
+      case 'X':
+        yield state.copyWith(
+            twoNumber: state.mathResult, mathResult: '${num1 * num2}');
+        break;
+
+      default:
+        yield state;
+    }
   }
 }
