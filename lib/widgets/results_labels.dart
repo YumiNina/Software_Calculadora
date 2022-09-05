@@ -20,7 +20,10 @@ class ResultsLabels extends StatelessWidget {
         }
         return Column(
           children: [
-            SubResult(text: state.oneNumber),
+            SubResult(
+                text: state.oneNumber.endsWith('.0')
+                    ? state.oneNumber.substring(0, state.oneNumber.length - 2)
+                    : state.oneNumber),
             SubResult(text: state.operation),
             SubResult(
                 text: state.twoNumber.endsWith('.0')
